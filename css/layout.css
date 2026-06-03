@@ -1,0 +1,54 @@
+/* ── HEADER ── */
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: #000;
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  transition: background .3s;
+}
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 3rem;
+}
+.logo img { height: 60px; object-fit: contain; display: block; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: flex-end; }
+nav ul li a { font-family: var(--body-font); font-size: .95rem; padding: .375rem 0; border-bottom: 2px solid transparent; transition: border-color .2s; }
+nav ul li a:hover { border-color: #fff; }
+.social-icons { display: flex; align-items: center; gap: 1rem; }
+.social-icons a svg { width: 2rem; height: 2rem; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; color: #fff; }
+
+/* Mobile nav */
+.mobile-nav { display: none; flex-direction: column; background: #111; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { padding: .75rem 1.5rem; border-bottom: 1px solid #333; font-size: .95rem; }
+
+/* ── FOOTER ── */
+footer { background: #000; color: #fff; padding: 5rem 1.5rem; }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 3rem; }
+.footer-brand img { height: 50px; object-fit: contain; }
+.footer-brand p { margin-top: 1rem; font-size: .95rem; }
+.footer-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 1.5rem; }
+.footer-nav ul li a { font-size: .95rem; }
+.footer-nav ul li a:hover { text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .header-inner { padding: 1rem 1.5rem; grid-template-columns: auto 1fr; }
+  nav, .social-icons { display: none; }
+  .hamburger { display: block; }
+  .logo img { height: 30px; }
+  .hero-content { padding: 5rem 1.5rem 6rem; }
+  .support-inner { gap: 2.5rem; }
+}
+@media (max-width: 640px) {
+  .links-col { flex: 0 0 100%; }
+  .charity-item { flex: 0 0 100%; }
+  .search-wrapper { max-width: 100%; }
+  .btn-group { flex-direction: column; }
+  .btn-group .btn { width: 100%; }
+}
